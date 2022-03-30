@@ -282,10 +282,10 @@ STATIC mp_obj_t speech_isolated_word_recognize(mp_obj_t self_in) {
             v_ftr_tag *ftr_mdl = (v_ftr_tag *)(&self->mfcc_dats[ftr_num]);
             if ((ftr_mdl->save_sign) == mfcc_dats_mask)
             {
-                printk("NO. %d, ftr_mdl->frm_num %d, ", ftr_num, ftr_mdl->frm_num);
+                // printk("NO. %d, ftr_mdl->frm_num %d, ", ftr_num, ftr_mdl->frm_num);
                 
                 uint32_t cur_dis = dtw(ftr_mdl, &ftr_curr);
-                printk("cur_dis %d, ftr_curr.frm_num %d\r\n", cur_dis, ftr_curr.frm_num);
+                // printk("cur_dis %d, ftr_curr.frm_num %d\r\n", cur_dis, ftr_curr.frm_num);
             
                 if (cur_dis < self->min_dis)
                 {
@@ -293,7 +293,7 @@ STATIC mp_obj_t speech_isolated_word_recognize(mp_obj_t self_in) {
                     self->min_dis = cur_dis;
                     self->cur_frm = ftr_curr.frm_num;
                     self->min_frm = ftr_mdl->frm_num;
-                    printk("min_comm: %d \r\n", self->min_comm);
+                    // printk("min_comm: %d \r\n", self->min_comm);
                 }
             }
         }

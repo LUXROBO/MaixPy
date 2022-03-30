@@ -85,7 +85,7 @@ set(LINK_FLAGS ${LINK_FLAGS}
             -T ${PROJECT_SOURCE_DIR}/compile/kendryte.ld
             -Wl,--start-group
             -Wl,--whole-archive
-            kendryte_sdk/libkendryte_sdk.a  main/libmain.a
+            main/libmain.a kendryte_sdk/libkendryte_sdk.a 
             -Wl,--no-whole-archive
             -Wl,--end-group
             )

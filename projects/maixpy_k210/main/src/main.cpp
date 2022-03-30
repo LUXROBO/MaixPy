@@ -7,4 +7,3 @@ int main()
     maixpy_main();
     return 0;
 }
-
